@@ -53,10 +53,19 @@ console.log(msg)
 let a = 100;
 console.log(typeof a);
 
-let b ='100';
+let b = '100';
 console.log(typeof b);
 
 let c = true;
 console.log(typeof c);
 
+// додаткове завдання
 
+let text = prompt('Імя?');
+console.log(text);
+
+let text2 = prompt('По-Батькові');
+console.log(text2);
+
+let text3 = prompt('Вік');
+console.log(text3);
