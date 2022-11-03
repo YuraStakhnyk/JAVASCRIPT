@@ -2,26 +2,19 @@
 
 // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
-let arr1 = [1, 'element1', true]
-console.log(arr1);
-let arr2 = [2, 'element2', true]
-console.log(arr2);
-let arr3 = [3, 'element3', true]
-console.log(arr3);
-let arr4 = [4, 'element5', false]
-console.log(arr4);
-let arr5 = [5, 'element5', true]
-console.log(arr5);
-let arr6 = [6, 'element6', true]
-console.log(arr6);
-let arr7 = ['7', 'element7', false]
-console.log(arr7);
-let arr8 = [8, 'element8', true]
-console.log(arr8);
-let arr9 = [9, 'element9', true]
-console.log(arr8);
-let arr10 = [10, 'element10', true]
-console.log(arr9);
+let arr = [1, 'element1', true, '1223', 234, 'element2', false, '65432', 'element3', 'lost']
+console.log(arr[0]);
+console.log(arr[1]);
+console.log(arr[2]);
+console.log(arr[3]);
+console.log(arr[4]);
+console.log(arr[5]);
+console.log(arr[6]);
+console.log(arr[7]);
+console.log(arr[8]);
+console.log(arr[9]);
+
+console.log(arr.length)
 
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 
