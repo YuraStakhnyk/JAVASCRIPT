@@ -1,0 +1,12 @@
+.target img {
+    width: 200px;
+}
+.title {
+    font-size: 30px;
+    font-family: "Arial Black";
+    background: #1900ff;
+    color: gold;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
