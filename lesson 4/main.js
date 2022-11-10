@@ -142,7 +142,7 @@ for (const product of products) {
     document.write(
         `<div class="target">
                 <h3 class="title">${product.title} - ціна тижня ${product.price} UAH</h3>
-                <img src="${product.image}" alt="" class="${product.title}">
+                <img src="${product.image}" alt="${product.title}" class="img">
          </div>`
     )
 }
