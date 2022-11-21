@@ -136,21 +136,46 @@ for (let i = 0; i < coursesAndDurationArray.length; i++){
 // - всі трефи від 9 та більше
 //
 //
-let cards = [
-    {cardSuit: 'spade', 'diamond','heart', 'clubs'},
-    {item: '6'-'10', 'ace','jack','queen','king','joker'},
-    {color:'red','black'}
-]
+let block = [
+    {cardSuit:'Spade', value: 6, color:'Black'},
+    {cardSuit:'Clubs', value: 6, color:'Black'},
+    {cardSuit:'Hearts', value: 6, color:'Red'},
+    {cardSuit:'Diamonds', value: 6, color:'Red'},
+    {cardSuit:'Spade', value: 7, color:'Black'},
+    {cardSuit:'Clubs', value: 7, color:'Black'},
+    {cardSuit:'Hearts', value: 7, color:'Red'},
+    {cardSuit:'Diamonds', value: 7, color:'Red'},
+    {cardSuit:'Spade', value: 8, color:'Black'},
+    {cardSuit:'Clubs', value: 8, color:'Black'},
+    {cardSuit:'Hearts', value: 8, color:'Red'},
+    {cardSuit:'Diamonds', value: 8, color:'Red'},
+    {cardSuit:'Spade', value: 9, color:'Black'},
+    {cardSuit:'Clubs', value: 9, color:'Black'},
+    {cardSuit:'Hearts', value: 9, color:'Red'},
+    {cardSuit:'Diamonds', value: 9, color:'Red'},
+    {cardSuit:'Spade', value: 10, color:'Black'},
+    {cardSuit:'Clubs', value: 10, color:'Black'},
+    {cardSuit:'Hearts', value: 10, color:'Red'},
+    {cardSuit:'Diamonds', value: 10, color:'Red'},
+    {cardSuit:'Spade', value: 'Jack', color:'Black'},
+    {cardSuit:'Clubs', value: 'Jack', color:'Black'},
+    {cardSuit:'Hearts', value: 'Jack', color:'Red'},
+    {cardSuit:'Diamonds', value: 'Jack', color:'Red'},
+    {cardSuit:'Spade', value: 'Queen', color:'Black'},
+    {cardSuit:'Clubs', value: 'Queen', color:'Black'},
+    {cardSuit:'Hearts', value: 'Queen', color:'Red'},
+    {cardSuit:'Diamonds', value: 'Queen', color:'Red'},
+    {cardSuit:'Spade', value: 'King', color:'Black'},
+    {cardSuit:'Clubs', value: 'King', color:'Black'},
+    {cardSuit:'Hearts', value: 'King', color:'Red'},
+    {cardSuit:'Diamonds', value: 'King', color:'Red'},
+    {cardSuit:'Spade', value: 'Ace', color:'Black'},
+    {cardSuit:'Clubs', value: 'Ace', color:'Black'},
+    {cardSuit:'Hearts', value: 'Ace', color:'Red'},
+    {cardSuit:'Diamonds', value: 'Ace', color:'Red'}
+    ]
 //
-let reduce = cards.reduce((accumulator, card) => {
-    accumulator.cardSuit.push(card.cardSuit);
-    accumulator.item.push(card.item);
-    accumulator.color.push(card.color);
-    return accumulator;
-}, {cardSuit: [], item: [], color: []});
 
-
-console.log(reduce);
 
 
 // Додатково по reduce
@@ -161,4 +186,13 @@ console.log(reduce);
 //     hearts:[],
 //     clubs:[]
 // }
+//
+let reduce = block.reduce((accumulator, card) => {
+    accumulator.cardSuit.push(card.cardSuit);
+    accumulator.value.push(card.value);
+    accumulator.color.push(card.color);
+    return accumulator;
+}, {cardSuit: [], value: [], color: []});
+console.log(reduce);
+
 
