@@ -2,16 +2,13 @@
 // 'hello world', 'lorem ipsum', 'javascript is cool'
 //
 let str1 = 'hello world';
-console.log(str1.indexOf('h'));  // 0
-console.log(str1.indexOf('d'));  // 10
+console.log(str1.length)
 
 let str2 = 'lorem ipsum';
-console.log(str2.indexOf('l'));      // 0
-console.log(str2.lastIndexOf('m'));  // 10
+console.log(str2.length)
 
 let str3 = 'javascript is cool';
-console.log(str3.indexOf('j'));      // 0
-console.log(str3.lastIndexOf('l'));  // 17
+console.log(str3.length)
 
 
 // - Перевести до великого регістру наступні стрінгові значення
@@ -43,9 +40,8 @@ console.log(strLo3.toLowerCase());
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 //
 let strDirty = ' dirty string   ';
-console.log(strDirty.indexOf('d'));      // 1
-console.log(strDirty.lastIndexOf('g'));  // 12
 console.log(strDirty.substring(1,13));
+console.log(strDirty.trim())
 
 
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
@@ -60,12 +56,15 @@ console.log(split)
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map та колбеку
 //   перетворити всі об'єкти в масиві на стрінгові.
 //
-let array = [10,8,-7,55,987,-1011,0,1050,0];  // я зробив toString незнаю чи так можна, умову читав там через map
-let string = array.toString()
-console.log(string)
-console.log(typeof string)
-console.log(typeof array)
-
+// let array = [10,8,-7,55,987,-1011,0,1050,0];  // я зробив toString незнаю чи так можна, умову читав там через map
+// let string = array.toString()
+// console.log(string)
+//
+const arr = [10,8,-7,55,987,-1011,0,1050,0];         // правильний варіант перетворення числа на стрінгу
+let strings = arr.map(value => value.toString());
+// let strings = arr.map(value => String(value));
+// let strings = arr.map(value => value + '');
+console.log(strings);
 
 
 // - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого,
@@ -73,23 +72,36 @@ console.log(typeof array)
 //     let nums = [11,21,3];
 // sortNums(nums,'ascending') // [3,11,21]
 //
-let nums = [11,21,3];
-nums.reverse()
-console.log(nums)
+// let nums = [11,21,3];
+// nums.reverse()
+// console.log(nums)
+// //
+// // sortNums(nums,'descending') // [21,11,3]
+// //
+// nums.sort (numsSort);
+// function numsSort (a, b) {
+//     if (a > b) {
+//         return -1;
+//     } else if (b > a) {
+//         return 1;
+//     } else {
+//         return 0;
+//     }
+// }
+// console.log(nums)
 //
-// sortNums(nums,'descending') // [21,11,3]
-//
-nums.sort (numsSort);
-function numsSort (a, b) {
-    if (a > b) {
-        return -1;
-    } else if (b > a) {
-        return 1;
-    } else {
-        return 0;
+let nums = [11, 21, 3];
+
+const sortNums = (direction, arr) => {
+    if (direction === 'ascending') {
+        arr.sort((a, b) => a - b);
+    } else if (direction === 'descending') {
+        arr.sort((a, b) => b - a);
     }
+    return arr;
 }
-console.log(nums)
+console.log(sortNums('ascending', nums));
+console.log(sortNums('descending', nums));
 
 
 
@@ -126,6 +138,9 @@ for (let i = 0; i < coursesAndDurationArray.length; i++){
         console.log(coursesAndDurationArray[i]);
     }
 };
+//
+// let filter = coursesAndDurationArray.filter(value => value.monthDuration > 5);  // варіант з фільтром
+// console.log(filter);
 
 
 // описати колоду карт
@@ -135,47 +150,64 @@ for (let i = 0; i < coursesAndDurationArray.length; i++){
 // - всі буби
 // - всі трефи від 9 та більше
 //
-//
-let block = [
-    {cardSuit:'Spade', value: 6, color:'Black'},
-    {cardSuit:'Clubs', value: 6, color:'Black'},
-    {cardSuit:'Hearts', value: 6, color:'Red'},
-    {cardSuit:'Diamonds', value: 6, color:'Red'},
-    {cardSuit:'Spade', value: 7, color:'Black'},
-    {cardSuit:'Clubs', value: 7, color:'Black'},
-    {cardSuit:'Hearts', value: 7, color:'Red'},
-    {cardSuit:'Diamonds', value: 7, color:'Red'},
-    {cardSuit:'Spade', value: 8, color:'Black'},
-    {cardSuit:'Clubs', value: 8, color:'Black'},
-    {cardSuit:'Hearts', value: 8, color:'Red'},
-    {cardSuit:'Diamonds', value: 8, color:'Red'},
-    {cardSuit:'Spade', value: 9, color:'Black'},
-    {cardSuit:'Clubs', value: 9, color:'Black'},
-    {cardSuit:'Hearts', value: 9, color:'Red'},
-    {cardSuit:'Diamonds', value: 9, color:'Red'},
-    {cardSuit:'Spade', value: 10, color:'Black'},
-    {cardSuit:'Clubs', value: 10, color:'Black'},
-    {cardSuit:'Hearts', value: 10, color:'Red'},
-    {cardSuit:'Diamonds', value: 10, color:'Red'},
-    {cardSuit:'Spade', value: 'Jack', color:'Black'},
-    {cardSuit:'Clubs', value: 'Jack', color:'Black'},
-    {cardSuit:'Hearts', value: 'Jack', color:'Red'},
-    {cardSuit:'Diamonds', value: 'Jack', color:'Red'},
-    {cardSuit:'Spade', value: 'Queen', color:'Black'},
-    {cardSuit:'Clubs', value: 'Queen', color:'Black'},
-    {cardSuit:'Hearts', value: 'Queen', color:'Red'},
-    {cardSuit:'Diamonds', value: 'Queen', color:'Red'},
-    {cardSuit:'Spade', value: 'King', color:'Black'},
-    {cardSuit:'Clubs', value: 'King', color:'Black'},
-    {cardSuit:'Hearts', value: 'King', color:'Red'},
-    {cardSuit:'Diamonds', value: 'King', color:'Red'},
-    {cardSuit:'Spade', value: 'Ace', color:'Black'},
-    {cardSuit:'Clubs', value: 'Ace', color:'Black'},
-    {cardSuit:'Hearts', value: 'Ace', color:'Red'},
-    {cardSuit:'Diamonds', value: 'Ace', color:'Red'}
-    ]
-//
+// {
+//     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
+//         value: '', // '6'-'10', 'ace','jack','queen','king','joker'
+//     color:'', // 'red','black'
+// }
 
+//
+const suits = [
+    {cardSuit: 'heart', color: 'red'},
+    {cardSuit: 'diamond', color: 'red'},
+    {cardSuit: 'spade', color: 'black'},
+    {cardSuit: 'clubs', color: 'black'},
+]
+const cardNames = [6, 7, 8, 9, 10, 'jack', 'queen', 'king', 'ace'];
+const deck = [];
+
+for (const suit of suits) {
+    for (const cardName of cardNames) {
+        const card = {
+            cardSuit: suit.cardSuit,
+            value: cardName,
+            color: suit.color
+        }
+        deck.push(card);
+    }
+}
+deck.push({cardSuit: 'joker', value: null, color: 'red'});
+deck.push({cardSuit: 'joker', value: null, color: 'black'});
+console.log(deck);
+
+// - знайти піковий туз
+
+let filter = deck.filter(value => value.cardSuit === 'spade' && value.value === 'ace');
+console.log(filter);
+
+// - всі шістки
+
+let filter1 = deck.filter(value =>value.value === 6);
+console.log(filter1);
+
+// - всі червоні карти
+
+let filter2 = deck.filter(value =>value.color === 'red');
+console.log(filter2);
+
+// - всі буби
+
+let filter3 = deck.filter(value =>value.cardSuit === 'diamond');
+console.log(filter3);
+
+// - всі трефи від 9 та більше
+
+let filter4 = deck.filter(value =>(value.cardSuit === 'clubs' && value.value >= 9) ||
+    (value.cardSuit === 'clubs' && typeof value.value === 'string'));
+console.log(filter4);
+
+// let filter = deck.filter(value =>value.cardSuit === 'clubs' && value.value >= '9' || value.value === '10');   //  варіант зі стрінговими числами
+// console.log(filter);
 
 
 // Додатково по reduce
@@ -187,12 +219,21 @@ let block = [
 //     clubs:[]
 // }
 //
-let reduce = block.reduce((accumulator, card) => {
-    accumulator.cardSuit.push(card.cardSuit);
-    accumulator.value.push(card.value);
-    accumulator.color.push(card.color);
-    return accumulator;
-}, {cardSuit: [], value: [], color: []});
+let reduce = deck.reduce((accum, value) => {
+    if (value.cardSuit === 'spade') {
+        accum.spades.push(value);
+    } else if (value.cardSuit === 'clubs') {
+        accum.clubs.push(value)
+    } else if (value.cardSuit === 'diamond') {
+        accum.diamonds.push(value)
+    } else if (value.cardSuit === 'heart') {
+        accum.hearts.push(value)
+    }
+    return accum;
+}, {
+    spades: [],
+    diamonds: [],
+    hearts: [],
+    clubs: []
+});
 console.log(reduce);
-
-
