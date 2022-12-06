@@ -48,30 +48,25 @@ class Client {
         this.phone = phone;
         this.order = order;
     }
-    // greeting() function(){
-    //    return  b.(this.order) - a.(this.order))
-    // }
-}
-let user11 = new Client(1, 'Vasya', 'Pool', 'pool@mail.ua', 8097-77-66-55, 140);
-let user12 = new Client(2, 'Kolya', 'Yuna', 'ponig@mail.ua', 8097-77-65-55, 40);
-let user13 = new Client(3, 'Nastya', 'Ulika', 'joli@mail.ua', 8097-44-66-55, 45);
-let user14 = new Client(4, 'Ira', 'Rubikon', 'yeti@mail.ua', 8097-79-66-55, 18);
-let user15 = new Client(5, 'Demyan', 'Rekrut', 'ereter@mail.ua', 8097-80-66-55, 340);
-let user16 = new Client(6, 'Oleg', 'Trivan', 'tumika@mail.ua', 8097-38-66-55, 210);
-let user17 = new Client(7, 'Sergiy', 'Yutar', 'serik@mail.ua', 8097-40-66-55, 95);
-let user18 = new Client(8, 'Veronika', 'Welesko', 'verik@mail.ua', 8097-20-66-55, 76);
-let user19 = new Client(9, 'Mia', 'Quoka', 'miakol@mail.ua', 8097-77-10-55, 160);
-let user20 = new Client(10, 'Ema', 'Zabiyna', 'emilia@mail.ua', 8097-28-66-55, 32);
 
-let userAll = {user11, user12, user13, user14, user15, user16, user17, user18, user19, user20}
+}
+let user11 = new Client(1, 'Vasya', 'Pool', 'pool@mail.ua', 8097776655, 140);
+let user12 = new Client(2, 'Kolya', 'Yuna', 'ponig@mail.ua', 8097776555, 40);
+let user13 = new Client(3, 'Nastya', 'Ulika', 'joli@mail.ua', 8097446655, 45);
+let user14 = new Client(4, 'Ira', 'Rubikon', 'yeti@mail.ua', 8097796655, 18);
+let user15 = new Client(5, 'Demyan', 'Rekrut', 'ereter@mail.ua', 8097806655, 340);
+let user16 = new Client(6, 'Oleg', 'Trivan', 'tumika@mail.ua', 8097386655, 210);
+let user17 = new Client(7, 'Sergiy', 'Yutar', 'serik@mail.ua', 8097406655, 95);
+let user18 = new Client(8, 'Veronika', 'Welesko', 'verik@mail.ua', 8097206655, 76);
+let user19 = new Client(9, 'Mia', 'Quoka', 'miakol@mail.ua', 8097771055, 160);
+let user20 = new Client(10, 'Ema', 'Zabiyna', 'emilia@mail.ua', 8097286655, 32);
+
+let userAll = [user11, user12, user13, user14, user15, user16, user17, user18, user19, user20]
 console.log(userAll);
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 //
-// let sortClient = userAll.sort((a, b) => (b.order - a.order));
-// console.log(sortClient)
-// console.log(userAll.greeting())
-//
-// console.log(userAll.greeting())
+let sortClient = userAll.sort((a, b) => (b.order - a.order));
+console.log(sortClient)
 
 
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску,
@@ -178,12 +173,31 @@ console.log(car2.greeting())
 
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 //
-
+Auto.prototype.greeting = function increaseMaxSpeed (newSpeed){
+    return `${newSpeed} нова максимальна швидкість`
+}
+console.log(car2.greeting(180))
 
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
+//
+Auto.prototype.greeting = function changeYear (newValue){
+    return `Нова модель ${this.model} ${newValue} року`
+}
+console.log(car2.greeting(2014))
+
+
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 //
+class SuperAuto extends Auto {
+    constructor(model, producer, year, maxSpeed, engineCapacity, driver, category) {
+        super(model, producer, year, maxSpeed, engineCapacity);
+        this.driver = driver;
+        this.category = category;
+    }
+}
 
+let driver2 = new SuperAuto('Man','ChechRepublic','2020', 220, 5.0, 'Butko V.S.', 'A')
+console.log(driver2)
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 class Popels {
@@ -229,3 +243,4 @@ console.log(searchPopel)
 
 
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+//
