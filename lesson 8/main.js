@@ -132,6 +132,51 @@ let driver = new SuperCar('skoda','ChechRepublic','2021', 180, 2, 'Kozak V.S.', 
 console.log(driver)
 
 
+// Через функцію пропис завдань
+//
+// function Car(model,producer,year,maxSpeed,engine) {
+//     this.model = model;
+//     this.producer = producer;
+//     this.year = year;
+//     this.maxSpeed = maxSpeed;
+//     this.engine = engine;
+//
+//     this.engine = function () {
+//         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
+//     }
+//
+//     this.info = function () {
+//         for (const carKey in this) {
+//             if (typeof this[carKey] !== 'function'){
+//                 console.log(`${carKey} -- ${this[carKey]}`);
+//             }
+//         }
+//     }
+//
+//     this.increaseMaxSpeed = function (newSpeed) {
+//         this.maxSpeed += newSpeed;
+//     }
+//
+//     this.changeYear = function (newValue) {
+//         this.year = newValue;
+//     }
+//
+//     this.addDriver = function (driver) {
+//         this.driver = driver;
+//     }
+// }
+//
+// const car = new Car('Toyota','Japan','2000',200,2.5);
+// console.log(car);
+// car.engine();
+// car.info();
+// car.increaseMaxSpeed(50);
+// car.changeYear(2020);
+// car.addDriver({name: 'Vasya'});
+// console.log(car);
+
+
+
 // - (Те саме, тільки через клас)
 class Auto {
     constructor(model, producer, year, maxSpeed, engineCapacity) {
@@ -199,6 +244,53 @@ class SuperAuto extends Auto {
 let driver2 = new SuperAuto('Man','ChechRepublic','2020', 220, 5.0, 'Butko V.S.', 'A')
 console.log(driver2)
 
+
+// Через функцію пропис завдань
+// class Car{
+//     constructor(model,producer,year,maxSpeed,carEngine) {
+//         this.model = model;
+//         this.producer = producer;
+//         this.year = year;
+//         this.maxSpeed = maxSpeed;
+//         this.carEngine = carEngine;
+//     }
+//
+//
+//     engine () {
+//         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
+//     }
+//
+//     info () {
+//         for (const carKey in this) {
+//             if (typeof this[carKey] !== 'function'){
+//                 console.log(`${carKey} -- ${this[carKey]}`);
+//             }
+//         }
+//     }
+//
+//     increaseMaxSpeed (newSpeed) {
+//         this.maxSpeed += newSpeed;
+//     }
+//
+//     changeYear (newValue) {
+//         this.year = newValue;
+//     }
+//
+//     addDriver (driver) {
+//         this.driver = driver;
+//     }
+// }
+//
+// const car = new Car('Toyota','Japan','2000',200,3.4);
+// console.log(car);
+// car.engine();
+// car.info();
+// car.increaseMaxSpeed(50);
+// car.changeYear(2020);
+// car.addDriver({name: 'Vasya'});
+// console.log(car);
+
+
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 class Popels {
 
@@ -244,3 +336,5 @@ console.log(searchPopel)
 
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 //
+let find = popelSAll.find(value => value.size === princeSearch.shoe)
+console.log(find)
