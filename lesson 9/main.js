@@ -58,14 +58,29 @@ let simpsons = [
 // Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
 //     Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
 //
-
-for (const simpson of simpsons) {
-    let simDiv = document.createElement('div')
-    simDiv.setAttribute('class', 'member')
-    simDiv.innerHTML = `<h3>${simpson.name}</h3> <h3>${simpson.surname}</h3> <h4>${simpson.age}</h4> <h5>${simpson.info}</h5> <img src="${simpson.photo}">`
-    simDiv.classList.add('uStyle')
-    document.body.appendChild(simDiv)
-}
+// for (const simpson of simpsons) {
+//     let simDiv = document.createElement('div')
+//     simDiv.setAttribute('class', 'member')
+//     simDiv.innerHTML = `<h3>${simpson.name}</h3> <h3>${simpson.surname}</h3> <h4>${simpson.age}</h4> <h5>${simpson.info}</h5> <img src="${simpson.photo}">`
+//     simDiv.classList.add('uStyle')
+//     document.body.appendChild(simDiv)
+// }
+//
+// for (const simpson of simpsons) {
+//     const {name,surname,age,info, photo} = simpson;
+//
+//     let div = document.createElement('div');
+//     div.classList.add('member');
+//
+//     let simps = document.createElement('div');
+//     simps.innerText = `${name} ${surname} ${age} ${info}`
+//
+//     let img = document.createElement('img');
+//     img.src = photo;
+//
+//     div.append(simps, img);
+//     document.body.append(div);
+// }
 
 
 // Цикл в циклі
@@ -144,39 +159,46 @@ let coursesArray = [
 // окремих властивостей, для властивості modules зробити список з елементами
 // Приклад структири знаходиться у файлі example.png
 //
-
-    for (let i = 0; i < coursesArray.length; i++) {
-
-        let divCont = document.createElement('div');
-
-        let divTit = document.createElement('div');
-        divTit.innerText = coursesArray[i].title;
-
-        let divMoD = document.createElement('div');
-        divMoD.innerText = coursesArray[i].monthDuration;
-
-        let divHoD = document.createElement('div');
-        divHoD.innerText = coursesArray[i].hourDuration;
-
-        let modul = document.createElement('li');
-        modul.innerText = coursesArray[i].modules;
-
-
-        divCont.append(divTit, divMoD, divHoD, modul);
-        divCont.classList.add('id')
-        document.body.appendChild(divCont)
-        console.log(divCont)
-
-
-    }
-
-
-
-
+// for (const item of coursesArray) {
+//
+//     let divBox = document.createElement('div');
+//     divBox.classList.add('divStyle')
+//     document.body.append(divBox);
+//
+//     let title = document.createElement('div');
+//     title.classList.add('divT')
+//     title.innerText = `${item.title}`;
+//
+//
+//     let mount = document.createElement('div');
+//     mount.classList.add('left')
+//     mount.innerText = `${item.monthDuration}`;
+//
+//     let hour = document.createElement('div');
+//     hour.classList.add('right')
+//     hour.innerText =`${item.hourDuration}`;
+//
+//     let mH = document.createElement('div')
+//     mH.classList.add('mH')
+//     mH.append(mount, hour)
+//
+//     let ul = document.createElement('ul')
+//     ul.classList.add('modul')
+//     divBox.append(ul)
+//
+//     for (const ulElement of item.modules) {
+//         let li = document.createElement('li');
+//         li.classList.add('li')
+//         li.innerText = `${ulElement}`;
+//         ul.append(li)
+//     }
+//
+//     divBox.append(title, mH, ul)
+//
+//     }
 
 
 // ------------------
-//
 //
 //     - створити блок,
 //     - додати йому класи wrap, collapse, alpha, beta
@@ -184,12 +206,30 @@ let coursesArray = [
 // - додати цей блок в body.
 // - клонувати його повністю, та додати клон в body.
 //
+// let divClone = document.createElement('div');
+// divClone.innerText = 'Hello Okten'
+// divClone.classList.add('wrap', 'collapse', 'alpha', 'beta');
+// document.body.append(divClone)
+// document.body.append(divClone.cloneNode(true))
+
+
 // - Є масив:
 //     ['Main','Products','About us','Contacts']
 // Взяти файл template1.html та додати в нього скріпт котрий для кожного елементу масиву створює
 // li та додає його до блоку .menu
 // Завдання робити через цикли.
 //
+const arr = ['Main','Products','About us','Contacts'];
+let ul = document.getElementsByClassName('menu')[0];
+
+for (const ulElement of arr) {
+    let li = document.createElement('li');
+    li.innerText = `${ulElement}`;
+    ul.append(li);
+
+}
+
+
 // - Є масив
 // let coursesAndDurationArray = [
 //     {title: 'JavaScript Complex', monthDuration: 5},
@@ -202,6 +242,14 @@ let coursesArray = [
 // Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
 // Завдання робити через цикли.
 //
+// for (const item of coursesAndDurationArray) {
+//     let div = document.createElement('div')
+//
+//     div.innerText = `${item.title} ${item.monthDuration}`
+//     document.body.append(div)
+// }
+
+
 // - Є масив
 // let coursesAndDurationArray = [
 //     {title: 'JavaScript Complex', monthDuration: 5},
@@ -212,23 +260,108 @@ let coursesArray = [
 //     {title: 'Frontend', monthDuration: 4}
 // ];
 //
-//
 // За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,  в якому буде <h1 class='heading'>
 // з title  елементу, та <p class='description'> з monthDuration елементу.
 //     Завдання робити через цикли.
 //
+// for (const item of coursesAndDurationArray) {
 //
+//     let div = document.createElement('div');
+//     div.classList.add('item');
+//     document.body.append(div);
 //
+//     let h1 = document.createElement('h1');
+//     h1.innerText =`${item.title}`;
+//     h1.classList.add('heading');
+//
+//     let p = document.createElement('p');
+//     p.innerText = `${item.monthDuration}`;
+//     p.classList.add('description');
+//
+//     document.body.append(h1, p)
+//
+// }
+
+
+
 // -----------
 //
 //     - Створити довільний елемент з id = text.  Використовуючи JavaScript, зробіть так, щоб при натисканні на
 //     кнопку зникав елемент з id="text".
 //
+// let div = document.createElement('div');
+// div.innerText = 'Hello Yura';
+// div.setAttribute('id', 'text');
 //
+// let button = document.createElement('button');
+// button.innerText = 'Subscribe';
+//
+// document.body.append(div, button)
+//
+// button.onclick = () => {
+//     div.style.display = "none"
+// }
+
+
+
 //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати
 //     інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
 //
+// let input = document.createElement('input');
+// let button = document.createElement('button');
+// button.innerText = 'Click Me';
 //
+// document.body.append(input, button);
+//
+// button.onclick = () => {
+//     input.oninput;
+//     if(input.value < 18){
+//         alert('No');
+//     }else if (input.value >= 18){
+//         alert('Yes');
+//     }
+// }
+
+
+
 // *** Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
+//
+// let input1 = document.createElement('input');
+// let input2 = document.createElement('input');
+// let input3 = document.createElement('input');
+//
+// let button = document.createElement('button');
+// button.innerText = 'Click';
+//
+// document.body.append(input1, input2, input3, button)
+//
+// button.onclick = () => {
+//     let t1 = input1.value;
+//     let t2 = input2.value;
+//     let text = input3.value;
+//
+//     const generateTable = (raws, columns, word) => {
+//         let table = document.createElement('table');
+//         table.style.border = `2px solid blue`;
+//         document.body.append(table);
+//
+//     for (let i = 0; i < raws; i++) {
+//             let raw = document.createElement('t1');
+//             table.append(raw);
+//
+//         for (let j = 0; j < columns; j++) {
+//             let column = document.createElement('t2')
+//             column.innerText = `${word}`;
+//             column.style.border = `2px solid gold`;
+//             raw.append(column)
+//         }
+//         }
+//     }
+//
+//     generateTable(t1, t2, text)
+// }
+
+
+
