@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Project</title>
+<!--         Стилизація проєкта - -->
+<!--         index.html - всі блоки з user - по 2 в рядок. кнопки/посилвння розташувати під інформацією про user.-->
+    <style>
+        .box{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 550px;
+            padding: 30px 10px;
+            box-sizing: border-box;
+            border: 2px solid rgba(121, 109, 109, 0.6);
+            border-radius: 13px;
+            background: linear-gradient(#0a6b77, #2281b9);
+        }
+        .ashka{
+
+            text-transform: uppercase;
+            width: 80%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            border: 2px solid rgba(111, 111, 111, 0.5);
+            color: linear-gradient(white, gray);
+            background: linear-gradient(white, rgba(143, 137, 137, 0.99));
+            text-decoration: none;
+            border-radius: 20px;
+            box-shadow: rgba(147, 124, 124, 0.3) 2px 2px 2px;
+        }
+        .ashka:hover{
+            color: white;
+            background: #095f89;
+        }
+        .divMain{
+
+            font-family: Cambria;
+            text-align: center;
+            margin: 10px 0px;
+            box-sizing: border-box;
+            width: 230px;
+            height: 80px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            border: 2px solid rgba(115, 104, 105, 0.6);
+            color: #000410;
+            background: linear-gradient(#558cef, white);
+            border-radius: 10px;
+            box-shadow: rgba(61, 60, 60, 0.3) 5px 5px 5px;
+
+        }
+    </style>
+</head>
+<body>
+
+<script>
+
+    // В index.html
+    // 1 отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users
+    // 2 Вивести id,name всіх user в index.html. Окремий блок для кожного user.
+    // 3 Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  на сторінку user-details.html,
+    // котра має детальну інфорацію про об'єкт на який клікнули
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response) => response.json())
+        .then(users => {
+            let div2 = document.createElement('div');
+            div2.classList.add('box');
+            for (const user of users) {
+                let div = document.createElement('div');
+                div.innerText =`${user.id} ${user.name}`;
+                div.classList.add('divMain')
+                let a = document.createElement('a');
+                a.classList.add('ashka')
+                a.href = `user-details.html?id=${user.id}`;
+                a.innerText = ' posts of user';
+                div.appendChild(a);
+            div2.append(div)
+
+            }
+                document.body.appendChild(div2);
+        });
+
+
+
+</script>
+
+</body>
+</html>
