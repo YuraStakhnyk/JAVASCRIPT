@@ -6,74 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Posts of user</title>
-<!--     На user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.-->
-<!--     блоки з короткою інфою про post - в ряд по 5 .-->
-    <style>
-    .detBox{
-        width: 1400px;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-        border: 2px solid rgba(121, 109, 109, 0.6);
-        border-radius: 13px;
-        background: linear-gradient(#0a6b77, #2281b9);
-    }
-    .ulka{
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: space-around;
-        box-sizing: border-box;
-        padding-left: 10px;
-    }
-    .lizka{
-        box-sizing: border-box;
-        width: 220px;
-        height: 120px;
-        flex-wrap: wrap;
-        margin: 10px;
-        position: relative;
-        padding: 10px;
-        border: 2px solid rgba(115, 104, 105, 0.6);
-        background: linear-gradient(#558cef, white);
-        border-radius: 10px;
-        box-shadow: rgba(61, 60, 60, 0.3) 5px 5px 5px;
-    }
-    .aStyle{
-        font-size: 15px;
-        position: absolute;
-        bottom: 0;
-        text-transform: uppercase;
-        width: 90%;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        margin: 0 10px 10px 0;
-        border: 2px solid rgba(111, 111, 111, 0.5);
-        color: linear-gradient(white, gray);
-        background: linear-gradient(white, rgba(143, 137, 137, 0.99));
-        text-decoration: none;
-        border-radius: 20px;
-        box-shadow: rgba(147, 124, 124, 0.3) 2px 2px 2px;
-    }
-    .aStyle:hover{
-        color: white;
-        background: #095f89;
-    }
-    li{
-        list-style: none
-    }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
 <script>
 
     // На сторінці user-details.html:
-    // 4 Вивести всю, без виключення, інформацію про об'єкт user на який клікнули.
-    // 5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
+    // 4. Вивести всю, без виключення, інформацію про об'єкт user на який клікнули.
+    // 5. Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
     // (для отримання постів використовуйте ендпоінт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
-    // 6 Кажному посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html,
+    // 6. Кажному посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html,
     // котра має детальну інфу про поточний пост.
 
 let url = new URL(location.href);
@@ -85,7 +28,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
     let divDetBox = document.createElement('div');
     divDetBox.classList.add('detBox');
     let ul = document.createElement('ul');
-    ul.classList.add('ulka')
+    ul.classList.add('ulka');
     for (const post of posts) {
         let li = document.createElement('li');
         li.innerText = post.title;
@@ -93,12 +36,12 @@ fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
         let a = document.createElement('a');
         a.href = `post-details.html?post_id=${post.id}`;
         a.innerText = ' post of current user';
-        a.classList.add('aStyle')
+        a.classList.add('aStyle');
         li.appendChild(a);
-        ul.appendChild(li)
-        divDetBox.append(ul)
+        ul.appendChild(li);
+        divDetBox.append(ul);
     }
-        document.body.appendChild(divDetBox)
+        document.body.appendChild(divDetBox);
 });
 </script>
 </body>

@@ -1,0 +1,167 @@
+/* index.html */
+
+/* Стилизація проєкта -*/
+/* index.html - всі блоки з user - по 2 в рядок. */
+/* кнопки/посилвння розташувати під інформацією про user.*/
+
+.box{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 600px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    border: 2px solid rgba(121, 109, 109, 0.6);
+    border-radius: 13px;
+    background: linear-gradient(#0a6b77, #2281b9);
+}
+.ashka{
+    text-transform: uppercase;
+    width: 80%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    border: 2px solid rgba(111, 111, 111, 0.5);
+    color: linear-gradient(white, gray);
+    background: linear-gradient(white, rgba(143, 137, 137, 0.99));
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: rgba(147, 124, 124, 0.3) 2px 2px 2px;
+}
+.ashka:hover{
+    color: white;
+    background: #095f89;
+}
+.divMain{
+    font-family: Cambria;
+    margin: 10px 0px;
+    box-sizing: border-box;
+    width: 230px;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid rgba(115, 104, 105, 0.6);
+    color: #000410;
+    background: linear-gradient(#558cef, white);
+    border-radius: 10px;
+    box-shadow: rgba(61, 60, 60, 0.3) 5px 5px 5px;
+}
+
+/* user-details.html */
+
+/* На user-details.html - блок з інфою про user зверху сторінки. */
+/* Кнопка нижчє, на 90% ширини сторінки, по центру.*/
+/* блоки з короткою інфою про post - в ряд по 5 .*/
+
+.detBox{
+    width: 1400px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border: 2px solid rgba(121, 109, 109, 0.6);
+    border-radius: 13px;
+    background: linear-gradient(#0a6b77, #2281b9);
+}
+.ulka{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.lizka{
+    box-sizing: border-box;
+    width: 230px;
+    height: 120px;
+    flex-wrap: wrap;
+    margin: 6px;
+    position: relative;
+    padding: 10px;
+    border: 2px solid rgba(115, 104, 105, 0.6);
+    background: linear-gradient(#558cef, white);
+    border-radius: 10px;
+    box-shadow: rgba(61, 60, 60, 0.3) 5px 5px 5px;
+}
+.aStyle{
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    width: 90%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px 10px 0;
+    border: 2px solid rgba(111, 111, 111, 0.5);
+    color: linear-gradient(white, gray);
+    background: linear-gradient(white, rgba(143, 137, 137, 0.99));
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: rgba(147, 124, 124, 0.3) 2px 2px 2px;
+}
+.aStyle:hover{
+    color: white;
+    background: #095f89;
+}
+li{
+    list-style: none
+}
+
+/* post-details.html */
+
+/* post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд. */
+/* Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки */
+/* (дати фон. марджини і тд) */
+
+.postBox{
+    width: 1400px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border: 2px solid rgba(121, 109, 109, 0.6);
+    border-radius: 13px;
+    background: linear-gradient(#0a6b77, #2281b9);
+}
+.ulka2{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding-left: 10px;
+    column-gap: 20px;
+}
+.lizka2{
+    box-sizing: border-box;
+    width: 230px;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid rgba(144, 166, 210, 0.6);
+    background: linear-gradient(#558cef, white);
+    border-radius: 10px;
+    box-shadow: rgba(61, 60, 60, 0.3) 5px 5px 5px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 900px) {
+
+    .detBox {
+        width: 600px;
+    }
+    .ulka{
+        padding: 20px 10px;
+    }
+
+    .postBox {
+        width: 600px;
+        padding: 20px 30px;
+    }
+    .ulka2 {
+        justify-content: space-between;
+    }
+
+}
