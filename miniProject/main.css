@@ -137,6 +137,7 @@ li{
 }
 .lizka2{
     box-sizing: border-box;
+    text-align: center;
     width: 230px;
     flex-wrap: wrap;
     margin: 10px;

@@ -21,13 +21,13 @@
     fetch('https://jsonplaceholder.typicode.com/users')
         .then((response) => response.json())
         .then(users => {
-            let div2 = document.createElement('div');
+            const div2 = document.createElement('div');
             div2.classList.add('box');
             for (const user of users) {
-                let div = document.createElement('div');
+                const div = document.createElement('div');
                 div.innerText =`${user.id} ${user.name}`;
                 div.classList.add('divMain');
-                let a = document.createElement('a');
+                const a = document.createElement('a');
                 a.classList.add('ashka');
                 a.href = `user-details.html?id=${user.id}`;
                 a.innerText = ' posts of user';
