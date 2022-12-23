@@ -23,8 +23,8 @@
     justify-content: center;
     margin: 10px;
     border: 2px solid rgba(111, 111, 111, 0.5);
-    color: linear-gradient(white, gray);
-    background: linear-gradient(white, rgba(143, 137, 137, 0.99));
+    color: linear-gradient(#fcf9f9, #868686);
+    background: linear-gradient(#ffffff, rgba(143, 137, 137, 0.99));
     text-decoration: none;
     border-radius: 20px;
     box-shadow: rgba(147, 124, 124, 0.3) 2px 2px 2px;
@@ -45,7 +45,7 @@
     flex-wrap: wrap;
     border: 2px solid rgba(115, 104, 105, 0.6);
     color: #000410;
-    background: linear-gradient(#558cef, white);
+    background: linear-gradient(#558cef, #ffffff);
     border-radius: 10px;
     box-shadow: rgba(61, 60, 60, 0.3) 5px 5px 5px;
 }
@@ -82,7 +82,7 @@
     position: relative;
     padding: 10px;
     border: 2px solid rgba(115, 104, 105, 0.6);
-    background: linear-gradient(#558cef, white);
+    background: linear-gradient(#558cef, #ffffff);
     border-radius: 10px;
     box-shadow: rgba(61, 60, 60, 0.3) 5px 5px 5px;
 }
@@ -97,8 +97,8 @@
     justify-content: center;
     margin: 0 10px 10px 0;
     border: 2px solid rgba(111, 111, 111, 0.5);
-    color: linear-gradient(white, gray);
-    background: linear-gradient(white, rgba(143, 137, 137, 0.99));
+    color: linear-gradient(#ffffff, #7e7e7e);
+    background: linear-gradient(#ffffff, rgba(143, 137, 137, 0.99));
     text-decoration: none;
     border-radius: 20px;
     box-shadow: rgba(147, 124, 124, 0.3) 2px 2px 2px;
@@ -143,7 +143,7 @@ li{
     margin: 10px;
     padding: 10px;
     border: 2px solid rgba(144, 166, 210, 0.6);
-    background: linear-gradient(#558cef, white);
+    background: linear-gradient(#558cef, #ffffff);
     border-radius: 10px;
     box-shadow: rgba(61, 60, 60, 0.3) 5px 5px 5px;
 }
