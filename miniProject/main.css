@@ -1,8 +1,8 @@
-/* index.html */
+/*   index.html   */
 
-/* Стилизація проєкта -*/
-/* index.html - всі блоки з user - по 2 в рядок. */
-/* кнопки/посилвння розташувати під інформацією про user.*/
+/* Стилизація проєкта -                                                                                 */
+/* index.html - всі блоки з user - по 2 в рядок.                                                        */
+/* кнопки/посилвння розташувати під інформацією про user.                                               */
 
 .box{
     display: flex;
@@ -30,7 +30,7 @@
     box-shadow: rgba(147, 124, 124, 0.3) 2px 2px 2px;
 }
 .ashka:hover{
-    color: white;
+    color: #ffdc22;
     background: #095f89;
 }
 .divMain{
@@ -50,11 +50,11 @@
     box-shadow: rgba(61, 60, 60, 0.3) 5px 5px 5px;
 }
 
-/* user-details.html */
+/*   user-details.html   */
 
-/* На user-details.html - блок з інфою про user зверху сторінки. */
-/* Кнопка нижчє, на 90% ширини сторінки, по центру.*/
-/* блоки з короткою інфою про post - в ряд по 5 .*/
+/* На user-details.html - блок з інфою про user зверху сторінки.                                         */
+/* Кнопка нижчє, на 90% ширини сторінки, по центру.                                                      */
+/* блоки з короткою інфою про post - в ряд по 5 .                                                        */
 
 .detBox{
     width: 1400px;
@@ -104,18 +104,18 @@
     box-shadow: rgba(147, 124, 124, 0.3) 2px 2px 2px;
 }
 .aStyle:hover{
-    color: white;
+    color: #ffdc22;
     background: #095f89;
 }
 li{
     list-style: none
 }
 
-/* post-details.html */
+/*   post-details.html   */
 
-/* post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд. */
-/* Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки */
-/* (дати фон. марджини і тд) */
+/* post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.                                 */
+/* Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки   */
+/* (дати фон. марджини і тд)                                                                                 */
 
 .postBox{
     width: 1400px;
