@@ -165,7 +165,9 @@ li{
     .ulka{
         padding: 20px 10px;
     }
-
+    .ulka2{
+        padding-left: 0;
+    }
     .postBox {
         width: 600px;
         padding: 20px 30px;
