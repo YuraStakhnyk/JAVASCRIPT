@@ -152,6 +152,10 @@ li{
     rotation: initial;
     background: linear-gradient(rgba(10, 107, 119, 0.33), rgba(34, 129, 185, 0.32));
 }
+.hEmeil{
+    border: 1px solid rgba(243, 249, 255, 0.32);
+    border-radius: 5px;
+}
 
 @media screen and (min-width: 0px) and (max-width: 900px) {
 

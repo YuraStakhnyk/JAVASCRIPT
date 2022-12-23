@@ -22,6 +22,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${post_id}/comments`)
             h2.innerText = `${post.name}`;
             const h5 = document.createElement('h5');
             h5.innerText = `${post.email}`;
+            h5.classList.add('hEmeil')
             const h4 = document.createElement('h4');
             h4.innerText = `${post.body}`;
             li.append(h3, h2, h5, h4);
